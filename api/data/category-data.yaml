@@ -1,0 +1,47 @@
+GetCategoryResponse:
+  type: object
+  properties:
+    category:
+      $ref: './common-data.yaml#/Category'
+
+CreateCategoryResponse:
+  type: object
+  properties:
+    category:
+      $ref: './common-data.yaml#/Category'
+
+CreateCategoryRequest:
+  type: object
+  properties:
+    category:
+      $ref: './common-data.yaml#/Category'
+
+UpdateCategoryRequest:
+  type: object
+  properties:
+    category:
+      $ref: './common-data.yaml#/Category'
+
+UpdateCategoryResponse:
+  type: object
+  properties:
+    category:
+      $ref: './common-data.yaml#/Category'
+
+DeleteCategoryResponse:
+  type: object
+  properties:
+    response:
+      type: string
+      description: response message
+      example: Category {id} deleted
+
+GetCategoriesResponse:
+  type: object
+  properties:
+    content:
+      type: array
+      items:
+        type: string
+      description: list of categories
+

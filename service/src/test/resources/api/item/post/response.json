@@ -1,0 +1,11 @@
+{
+  "item": {
+    "id": 1,
+    "name": "РАКЕТКА ДЛЯ ТЕННИСА 100",
+    "description": "РАКЕТКА ДЛЯ ТЕННИСА 100",
+    "pcs": 100,
+    "price": 100.0,
+    "discountPrice": 100.0,
+    "categoryId": null
+  }
+}

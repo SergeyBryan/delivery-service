@@ -1,0 +1,9 @@
+Fault:
+  type: object
+  properties:
+    code:
+      type: string
+      description: Error code
+    details:
+      type: string
+      description: Error details

@@ -1,0 +1,63 @@
+openapi: 3.0.1
+info:
+  title: API documentation
+  description: API description
+  contact:
+    email: regkmastis@yandex.ru
+  version: 1.0.0
+
+paths:
+#Item
+  /item/get/{id}:
+    $ref: './methods/item-methods.yaml#/GetItemById'
+  /item/create:
+    $ref: './methods/item-methods.yaml#/CreateItem'
+  /item/update/{id}:
+    $ref: './methods/item-methods.yaml#/UpdateItem'
+  /item/delete/{id}:
+    $ref: './methods/item-methods.yaml#/DeleteItem'
+  /item/get:
+    $ref: './methods/item-methods.yaml#/GetItems'
+  /item/get/name/{name}:
+    $ref: './methods/item-methods.yaml#/GetItemsByName'
+  /item/get/categoryName/{name}:
+    $ref: './methods/item-methods.yaml#/GetItemsByCategoryName'
+
+#Category
+  /category/get:
+    $ref: './methods/category-methods.yaml#/GetCategories'
+  /category/create:
+    $ref: './methods/category-methods.yaml#/CreateCategory'
+  /category/update/{id}:
+    $ref: './methods/category-methods.yaml#/UpdateCategory'
+  /category/delete/{id}:
+    $ref: './methods/category-methods.yaml#/DeleteCategory'
+
+
+#Transport
+  /transport/get:
+    $ref: './methods/transport-methods.yaml#/GetAllTransports'
+  /transport/get/{id}:
+    $ref: './methods/transport-methods.yaml#/GetTransportById'
+  /transport/create:
+    $ref: './methods/transport-methods.yaml#/CreateTransport'
+  /transport/update/{id}:
+    $ref: './methods/transport-methods.yaml#/UpdateTransport'
+  /transport/delete/{id}:
+    $ref: './methods/transport-methods.yaml#/DeleteTransport'
+
+#Staff
+  /employee/get:
+    $ref: './methods/employee-methods.yaml#/GetEmployeeList'
+  /employee/create:
+    $ref: './methods/employee-methods.yaml#/SaveEmployee'
+  /employee/update/{id}:
+    $ref: './methods/employee-methods.yaml#/UpdateEmployee'
+  /employee/delete/{id}:
+    $ref: './methods/employee-methods.yaml#/DeleteEmployee'
+  /employee/get/{id}:
+    $ref: './methods/employee-methods.yaml#/GetEmployeeById'
+
+#Delivery
+  /delivery:
+    $ref: './methods/delivery-methods.yaml#/ReceiveDelivery'

@@ -1,0 +1,19 @@
+{
+  "transport": {
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "deliveryDate": "2024-05-02",
+    "acceptedDate": "2024-05-03",
+    "company": "LLC Galeria",
+    "brand": "Mercado",
+    "serial": "12345",
+    "items": [
+      {
+        "id": 1,
+        "name": "Tennis socks",
+        "description": "Sporty socks for tennis",
+        "pcs": 1
+      }
+    ],
+    "mark": "mercedes"
+  }
+}

@@ -1,0 +1,55 @@
+ReceiveDeliveryRequest:
+  type: object
+  properties:
+    uuid:
+      type: string
+      description: The UUID of the delivery
+      format: uuid
+      example: "f8b8c8c0-d0c3-11e8-9f1b-0a0c8d9f5f0a"
+    status:
+      type: string
+      description: The status of the delivery
+      example: "received"
+    transport:
+      $ref: 'common-data.yaml#/Transport'
+    items:
+      type: array
+      items:
+        $ref: 'common-data.yaml#/Item'
+    createdDate:
+      type: date
+      description: The date the delivery was received
+      example: "2018-01-01T00:00:00Z"
+    createdBy:
+      type: string
+      description: The User who created the delivery
+      example: "Peter"
+    receivedBy:
+      type: string
+      description: The User who received the delivery
+      example: "Bob"
+
+ReceiveDeliveryResponse:
+  type: object
+  properties:
+    uuid:
+      type: string
+      description: The UUID of the delivery
+      example: "f9e4d8d8-e8d5-4c4c-a9a1-f1b1c1d1e1f"
+    transportId:
+      type: string
+      description: The UUID of the transport
+      example: "f9e4d8d8-e8d5-4c4c-a9a1-f1b1c1d1e1f"
+    createdDate:
+      type: string
+      description: The date the delivery was created
+      example: "2019-01-01T00:00:00Z"
+    quantity:
+      type: integer
+      format: int64
+      description: The quantity of the delivery
+      example: 1
+    acceptedBy:
+      type: string
+      description: The user who accepted the delivery
+      example: "John Doe"

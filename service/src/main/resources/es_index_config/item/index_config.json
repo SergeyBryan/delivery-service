@@ -1,0 +1,89 @@
+{
+  "settings": {
+    "index": {
+      "max_ngram_diff": 30
+    },
+    "analysis": {
+      "filter": {
+        "ru_stop": {
+          "type": "stop",
+          "stopwords": "_russian_"
+        },
+        "ru_keywords": {
+          "type": "keyword_marker",
+          "keywords": []
+        },
+        "ru_stemmer": {
+          "type": "stemmer",
+          "language": "russian"
+        },
+        "lm_ngram": {
+          "type": "ngram",
+          "min_gram": 1,
+          "max_gram": 30
+        }
+      },
+      "analyzer": {
+        "default_russian_ngram": {
+          "type": "custom",
+          "char_filter": [
+            "html_strip"
+          ],
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "ru_stop",
+            "ru_stemmer",
+            "ru_keywords",
+            "lm_ngram"
+          ]
+        },
+        "default_russian": {
+          "type": "custom",
+          "char_filter": [
+            "html_strip"
+          ],
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "ru_stop",
+            "ru_stemmer",
+            "ru_keywords"
+          ]
+        },
+        "default_russian_exact": {
+          "filter": [
+            "lowercase",
+            "ru_stop"
+          ],
+          "char_filter": [
+            "html_strip"
+          ],
+          "type": "custom",
+          "tokenizer": "standard"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "item.name": {
+        "type": "text",
+        "analyzer": "default_russian",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "normalizer": "lowercase"
+          },
+          "exact": {
+            "type": "text",
+            "analyzer": "default_russian_exact"
+          }
+        }
+      },
+      "product.offerSearchPriority": {
+        "type": "integer"
+      }
+    }
+  }
+}

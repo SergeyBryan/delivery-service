@@ -1,0 +1,72 @@
+GetEmployeesResponse:
+  type: object
+  properties:
+    content:
+      type: array
+      items:
+        $ref: 'common-data.yaml#/Employee'
+      description: List of employees
+
+DeleteEmployeeResponse:
+  type: object
+  properties:
+    message:
+      type: string
+
+CreateEmployeeResponse:
+  type: object
+  properties:
+    employee:
+      $ref: 'common-data.yaml#/Employee'
+
+UpdateEmployeeResponse:
+  type: object
+  properties:
+    employee:
+      $ref: 'common-data.yaml#/Employee'
+
+UpdateEmployeeRequest:
+  type: object
+  properties:
+    employee:
+      $ref: '#/UpdateEmployeeRequestPayload'
+
+UpdateEmployeeRequestPayload:
+  type: object
+  properties:
+    id:
+      type: integer
+      format: int64
+      description: Employee id
+      example: 1
+      readOnly: true
+    name:
+      type: string
+      description: Employee name
+      example: 'Felix'
+    position:
+      type: string
+      description: Employee position
+      example: 'Retail leader'
+    salary:
+      type: integer
+      description: Employee salary
+      example: 1000.00
+    startedDate:
+      type: date
+      description: Employee started date
+      readOnly: true
+    endDate:
+      type: date
+      description: Employee ended date
+    department:
+      type: string
+      description: Employee department
+      example: 'Retail'
+
+
+GetEmployeeResponse:
+  type: object
+  properties:
+    employee:
+      $ref: 'common-data.yaml#/Employee'

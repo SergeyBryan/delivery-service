@@ -1,0 +1,49 @@
+GetItemResponse:
+  type: object
+  properties:
+    item:
+      $ref: './common-data.yaml#/Item'
+
+CreateItemResponse:
+  type: object
+  properties:
+    item:
+      $ref: './common-data.yaml#/Item'
+
+CreateItemRequest:
+  type: object
+  properties:
+    item:
+      $ref: './common-data.yaml#/Item'
+
+UpdateItemRequest:
+  type: object
+  properties:
+    item:
+      $ref: './common-data.yaml#/Item'
+
+UpdateItemResponse:
+  type: object
+  properties:
+    item:
+      $ref: './common-data.yaml#/Item'
+
+DeleteItemResponse:
+  type: object
+  properties:
+    response:
+      type: string
+      description: response message
+      example: Item {id} deleted
+
+GetItemsResponse:
+  type: object
+  properties:
+    content:
+      type: array
+      items:
+        $ref: './common-data.yaml#/Item'
+      description: list of items
+    stats:
+      $ref: './common-data.yaml#/Stats'
+

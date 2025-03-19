@@ -1,0 +1,31 @@
+ReceiveDelivery:
+  post:
+    tags:
+      - Delivery
+    operationId: receiveDelivery
+    description: receive delivery
+    summary: Receive delivery
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/delivery-data.yaml#/ReceiveDeliveryRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/delivery-data.yaml#/ReceiveDeliveryResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'

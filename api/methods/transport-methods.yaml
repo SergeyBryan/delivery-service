@@ -1,0 +1,164 @@
+GetTransportById:
+  get:
+    tags:
+      - Transport
+    operationId: getTransport
+    description: Get transport by id
+    summary: Get transport by id
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Успешный ответ
+        content:
+          application/json:
+            schema:
+              $ref: '../data/transport-data.yaml#/GetTransportResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+GetAllTransports:
+  get:
+    tags:
+      - Transport
+    operationId: getTransports
+    description: Получить информацию о машинах
+    responses:
+      200:
+        description: Успешный ответ
+        content:
+          application/json:
+            schema:
+              $ref: '../data/transport-data.yaml#/GetAllTransportsResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+CreateTransport:
+  post:
+    tags:
+      - Transport
+    operationId: createTransport
+    description: Create an transport
+    summary: Create an transport
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/transport-data.yaml#/CreateTransportRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/transport-data.yaml#/CreateTransportResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+UpdateTransport:
+  put:
+    tags:
+      - Transport
+    description: Update an transport
+    operationId: updateTransport
+    summary: Update an transport
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/transport-data.yaml#/UpdateTransportRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/transport-data.yaml#/UpdateTransportResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+DeleteTransport:
+  delete:
+    tags:
+      - Transport
+    description: Delete an transport
+    operationId: deleteTransport
+    summary: Delete an transport
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+          format: uuid
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/transport-data.yaml#/DeleteTransportResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'

@@ -1,0 +1,83 @@
+{
+  "mappings": {
+    "properties": {
+      "_class": {
+        "type": "keyword",
+        "index": false,
+        "doc_values": false
+      },
+      "category": {
+        "properties": {
+          "_class": {
+            "type": "keyword",
+            "index": false,
+            "doc_values": false
+          },
+          "id": {
+            "type": "long"
+          },
+          "name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          }
+        }
+      },
+      "id": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword",
+            "ignore_above": 256
+          }
+        }
+      },
+      "item": {
+        "properties": {
+          "_class": {
+            "type": "keyword",
+            "index": false,
+            "doc_values": false
+          },
+          "categoryId": {
+            "type": "long"
+          },
+          "description": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "discountPrice": {
+            "type": "float"
+          },
+          "id": {
+            "type": "long"
+          },
+          "name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "pcs": {
+            "type": "long"
+          },
+          "price": {
+            "type": "float"
+          }
+        }
+      }
+    }
+  }
+}
