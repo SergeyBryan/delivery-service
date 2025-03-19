@@ -1,0 +1,5 @@
+{
+  "path": "/item/create",
+  "status": 500,
+  "error": "Internal Server Error"
+}

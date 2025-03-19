@@ -1,0 +1,11 @@
+{
+  "employee": {
+    "id": 1,
+    "name": "Felix",
+    "position": "Retail leader",
+    "salary": 1500,
+    "startedDate": "2024-05-02",
+    "endDate": "2024-05-02",
+    "department": "Retail"
+  }
+}

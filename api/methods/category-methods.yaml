@@ -1,0 +1,131 @@
+CreateCategory:
+  post:
+    tags:
+      - Category
+    operationId: createCategory
+    description: Create an category
+    summary: Create an category
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/category-data.yaml#/CreateCategoryRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/category-data.yaml#/CreateCategoryResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+UpdateCategory:
+  put:
+    tags:
+      - Category
+    description: Update an category
+    operationId: updateCategory
+    summary: Update an category
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/category-data.yaml#/UpdateCategoryRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/category-data.yaml#/UpdateCategoryResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+DeleteCategory:
+  delete:
+    tags:
+      - Category
+    description: Delete an category
+    operationId: deleteCategory
+    summary: Delete an category
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/category-data.yaml#/DeleteCategoryResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+GetCategories:
+  get:
+    tags:
+      - Category
+    description: Get all categories
+    operationId: getCategories
+    summary: Get all categories
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/category-data.yaml#/GetCategoriesResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'

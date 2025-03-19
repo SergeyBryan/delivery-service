@@ -1,0 +1,44 @@
+GetTransportResponse:
+  type: object
+  properties:
+    transport:
+      $ref: './common-data.yaml#/Transport'
+
+CreateTransportRequest:
+  type: object
+  properties:
+    transport:
+      $ref: './common-data.yaml#/Transport'
+
+UpdateTransportRequest:
+  type: object
+  properties:
+    transport:
+      $ref: './common-data.yaml#/Transport'
+
+CreateTransportResponse:
+  type: object
+  properties:
+    transport:
+      $ref: './common-data.yaml#/Transport'
+
+UpdateTransportResponse:
+  type: object
+  properties:
+    transport:
+      $ref: './common-data.yaml#/Transport'
+
+DeleteTransportResponse:
+  type: object
+  properties:
+    message:
+      type: string
+
+GetAllTransportsResponse:
+  type: object
+  properties:
+    content:
+      type: array
+      items:
+        $ref: './common-data.yaml#/Transport'
+        description: list of transports

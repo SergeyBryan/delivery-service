@@ -1,0 +1,160 @@
+GetEmployeeList:
+  get:
+    tags:
+      - Employee
+    operationId: getEmployeeList
+    summary: Get all employees
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/employee-data.yaml#/GetEmployeesResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+SaveEmployee:
+  post:
+    tags:
+      - Employee
+    operationId: saveEmployee
+    summary: Create a new employee
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/common-data.yaml#/Employee'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/employee-data.yaml#/CreateEmployeeResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+GetEmployeeById:
+  get:
+    tags:
+      - Employee
+    operationId: getEmployeeById
+    summary: Get an employee by ID
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/employee-data.yaml#/GetEmployeeResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+UpdateEmployee:
+  put:
+    tags:
+      - Employee
+    operationId: updateEmployee
+    summary: Update an employee
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/employee-data.yaml#/UpdateEmployeeRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/employee-data.yaml#/UpdateEmployeeResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+DeleteEmployee:
+  delete:
+    tags:
+      - Employee
+    operationId: deleteEmployee
+    summary: Delete an employee
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/employee-data.yaml#/DeleteEmployeeResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'

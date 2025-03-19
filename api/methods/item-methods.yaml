@@ -1,0 +1,231 @@
+GetItemById:
+  get:
+    tags:
+      - Item
+    operationId: getItem
+    description: Get item by id
+    summary: Get item by id
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      200:
+        description: Успешный ответ
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/GetItemResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+CreateItem:
+  post:
+    tags:
+      - Item
+    operationId: createItem
+    description: Create an item
+    summary: Create an item
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/item-data.yaml#/CreateItemRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/CreateItemResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+UpdateItem:
+  put:
+    tags:
+      - Item
+    description: Update an item
+    operationId: updateItem
+    summary: Update an item
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '../data/item-data.yaml#/UpdateItemRequest'
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/UpdateItemResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+DeleteItem:
+  delete:
+    tags:
+      - Item
+    description: Delete an item
+    operationId: deleteItem
+    summary: Delete an item
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: integer
+          format: int64
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/DeleteItemResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+GetItems:
+  get:
+    tags:
+      - Item
+    description: Get all items
+    operationId: getItems
+    summary: Get all items
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/GetItemsResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+GetItemsByName:
+  get:
+    tags:
+      - Item
+    description: Get item by name
+    operationId: getItemsByName
+    summary: Get item
+    parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/GetItemsResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'
+
+GetItemsByCategoryName:
+  get:
+    tags:
+      - Item
+    description: Get items by category name
+    operationId: getItemsByCategoryName
+    summary: Get items by category name
+    parameters:
+      - in: path
+        name: name
+        required: true
+        schema:
+          type: string
+    responses:
+      200:
+        description: Successful response
+        content:
+          application/json:
+            schema:
+              $ref: '../data/item-data.yaml#/GetItemsResponse'
+      400:
+        $ref: './definitions/common-errors.yaml#/400'
+      403:
+        $ref: './definitions/common-errors.yaml#/403'
+      404:
+        $ref: './definitions/common-errors.yaml#/404'
+      500:
+        $ref: './definitions/common-errors.yaml#/500'
+      503:
+        $ref: './definitions/common-errors.yaml#/503'
+      504:
+        $ref: './definitions/common-errors.yaml#/504'

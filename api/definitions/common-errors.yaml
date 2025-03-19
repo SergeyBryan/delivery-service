@@ -1,0 +1,36 @@
+400:
+  description: |
+    Validation error. <br />
+    Code: (fault.code): <br />
+    1) ADAPTER_BAD_REQUEST (Adapter validation error.) <br />
+    2) SOURCE_BAD_REQUEST (Возникает при отправке невалидного запроса в источник.)
+    3) SERVICE_BAD_REQUEST (Возникает при отправке невалидного запроса к текущему сервису)
+
+403:
+  description: |
+    Access denied. <br />
+    code: (fault.code): <br />
+    1) SOURCE_ACCESS_DENIED (Например, доступ к источнику запрещен)
+
+404:
+  description: |
+    Обычно возникает в случае, когда запрос дошел до сервиса и когда необходимо выкинуть ошибку, если что-то не найдено. <br />
+    Code: (fault.code): <br />
+    1) DATA_NOT_FOUND (Например не найдены продукт или клиент в Siebel)
+500:
+  description: |
+    Internal server error. <br />
+    code: (fault.code): <br />
+    1) ADAPTER_UNKNOWN_ERROR (Произошла непредвиденная ошибка в адаптере) <br />
+    2) SOURCE_UNKNOWN_ERROR (Пришла неопознанная ошибка в источник) <br />
+    3) SERVICE_UNKNOWN_ERROR (Пришла непредвиденная ошибка в текущем сервисе)
+503:
+  description: |
+    Unavailable of service or adapter:: <br />
+    1) ADAPTER_UNAVAILABLE<br />
+    2) SERVICE_UNAVAILABLE
+504:
+  description: |
+    Timeout: <br />
+    1) ADAPTER_TIMEOUT<br />
+    2) SOURCE_TIMEOUT
