@@ -1,7 +1,5 @@
 # delivery-service
 
-# Store Manager API and Service
-
 This project consists of two modules:
 
 1. **API**: Contains the OpenAPI specifications and code generation for request bodies, response bodies, and APIs using Maven OpenAPI Generator.
